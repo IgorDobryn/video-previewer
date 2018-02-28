@@ -1,11 +1,10 @@
-import * as supertest from "supertest";
+import * as request from "supertest";
 import app from "../src/App";
 
-describe("App", () => {
-  it("works", () =>
-    supertest(app)
-      .get("/")
-      .expect("Content-Type", /json/)
-      .expect(200)
-  );
+describe('Videos#index', () => {
+  it('It should response the GET method', () => {
+    return request(app).get("/").then(response => {
+      expect(response.statusCode).toBe(200);
+    })
+  });
 })
