@@ -14,7 +14,7 @@ class App {
   private mountRoutes(): void {
     const router = express.Router();
     router.get("/", (req, res) => {
-      res.render('videos/index', { title: 'Video Previewer' });
+      res.render('videos/index', { loading: true });
     });
     this.express.use("/", router);
   }
