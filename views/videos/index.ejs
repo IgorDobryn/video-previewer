@@ -8,6 +8,16 @@
     <h1>Welcome to Video Previewer</h1>
     <% if (loading) { %>
       We are loading data...
+    <% } else if (error) { %>
+      <%= error %>
+    <% } else if (videos.length > 0) { %>
+      <% videos.forEach(function(video) {  %>
+        <div class="video">
+          <h3><%= video.title %> </h3>
+          <img src="<%= video.thumbnail %>"/>
+          <p><%= video.description %> </p>
+        </div>
+      <% }) %>
     <% } %>
   </body>
 </html>
